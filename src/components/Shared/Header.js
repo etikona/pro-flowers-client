@@ -10,7 +10,7 @@ const navbar = <>
 const Header = () => {
     return (
         <div>
-      <div className="navbar bg-base-100"><font></font>
+      <div className="navbar "><font></font>
   <div className="navbar-start"><font></font>
     <div className="dropdown"><font></font>
       <label tabIndex={0} className="btn btn-ghost lg:hidden"><font></font>
@@ -22,7 +22,7 @@ const Header = () => {
         
       </ul><font></font>
     </div><font></font>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a><font></font>
+    <a className="btn btn-ghost normal-case text-xl">Pro Flower</a><font></font>
   </div><font></font>
   <div className="navbar-center hidden lg:flex"><font></font>
     <ul className="menu menu-horizontal p-0"><font></font>
