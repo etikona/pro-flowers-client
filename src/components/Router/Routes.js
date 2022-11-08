@@ -1,4 +1,7 @@
+import Details from "../Pages/Details/Details";
+import ServiceDetails from "../Pages/Details/ServiceDetails";
 import Home from "../Pages/Home/Home";
+import Services from "../Pages/Services/Services";
 import Login from "../Pages/User/Login";
 import Signin from "../Pages/User/Signin";
 
@@ -8,20 +11,34 @@ const { default: Main } = require("../Layouts/Main");
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main/>,
+        element: <Main />,
         children: [
             {
                 path: '/home',
-                element: <Home/>,
-                loader:() => fetch('http://localhost:5000/services')
+                element: <Home />,
+                loader: () => fetch('https://pro-flowers-server.vercel.app/services')
+            },
+            {
+                path: '/services',
+                element: <Services/>,
+                loader: () => fetch('https://pro-flowers-server.vercel.app/services')
             },
             {
                 path: '/login',
-                element: <Login/>,
+                element: <Login />,
             },
             {
                 path: '/signin',
-                element: <Signin/>
+                element: <Signin />
+            },
+            {
+                path: '/details',
+                element: <Details />
+            },
+            {
+                path: '/serviceDetails',
+                element: <ServiceDetails />,
+                // loader: ({params}) => fetch(`https://pro-flowers-server.vercel.app/services/${params._id}`)
             }
         ]
     }

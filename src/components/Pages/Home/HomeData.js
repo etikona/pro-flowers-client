@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeData = ({data}) => {
     const{name, img, price, description} = data;
@@ -14,8 +15,8 @@ const HomeData = ({data}) => {
  </p><font></font>
 
     <div className="card-actions justify-end"><font></font>
-      <button className="btn bg-blue-900">See all</button><font></font>
-      <button className="btn bg-blue-900">Details</button><font></font>
+      <Link to='/services' className="btn bg-blue-900">See all</Link><font></font>
+      <Link to='/serviceDetails' className="btn bg-blue-900">Details</Link><font></font>
     </div><font></font>
   </div><font></font>
 </div>

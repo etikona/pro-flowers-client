@@ -1,31 +1,42 @@
 import React, { createContext, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import app from '../Firebase/firebase.config';
 
-  export  const AuthContext = createContext();
-  const auth = getAuth();
-const AuthProvider = ({children}) => {
-        const [user, setUser] = useState(null);
-        const [loader, setLoader] = useState(true);
-        
-        // Creating user
-        const createUser= (email, password) => {
-            return createUserWithEmailAndPassword(auth, email, password)
-        }
+export const AuthContext = createContext();
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+    const [loader, setLoader] = useState(true);
 
-        // Login user
-        const loginUser = (email, password) => {
-            return signInWithEmailAndPassword(auth, email, password)
-        }
-        // Logout user
-        const logout = () => {
-            return signOut(auth)
-        }
+    // Creating user
+    const createUser = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    // Login user
+    const loginUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    // Login with Google
+    const google = () => {
+        return signInWithPopup(auth, provider)
+    }
+
+    // Logout user
+    const logout = () => {
+        return signOut(auth)
+    }
 
     const authInfo = {
-        user, 
+        user,
         loader,
         createUser,
         loginUser,
+        logout,
+        google
+
     }
     return (
         <div>
