@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 // Dynamic Routes
 const navbar = <>
         <li className='font-semibold'><Link to="/home">Home</Link></li>
+        <li className='font-semibold'><Link to="/signin">Sign in</Link></li>
+        <li className='font-semibold'><Link to="/login">Login</Link></li>
 
 </>
 const Header = () => {
