@@ -25,7 +25,7 @@ const HomeData = ({ data }) => {
 
           <div className="card-actions justify-end"><font></font>
             <Link to='/services' className="btn bg-blue-900">See all</Link><font></font>
-            <Link to={`/serviceDetails/${_id}`} className="btn bg-blue-900">Details</Link><font></font>
+            <Link to={`/details/${_id}`} className="btn bg-blue-900">Details</Link><font></font>
           </div><font></font>
         </div><font></font>
       </div>

@@ -34,8 +34,9 @@ const router = createBrowserRouter([
                 element: <Signin />
             },
             {
-                path: '/details',
-                element: <Details />
+                path: '/details/:id',
+                element: <Details />,
+                loader: ({params}) => fetch(`https://pro-flowers-server-kgrcwyvbl-etikona.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addService',
@@ -46,9 +47,9 @@ const router = createBrowserRouter([
                 element: <MyReviews />
             },
             {
-                path: '/serviceDetails/:id',
+                path: '/serviceDetails/',
                 element: <ServiceDetails />,
-                loader: ({params}) => fetch(`https://pro-flowers-server-kgrcwyvbl-etikona.vercel.app/services/${params.id}`)
+              
                
             }
         ]
