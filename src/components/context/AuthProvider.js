@@ -11,21 +11,25 @@ const AuthProvider = ({ children }) => {
 
     // Creating user
     const createUser = (email, password) => {
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // Login user
     const loginUser = (email, password) => {
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // Login with Google
     const google = () => {
+        setLoader(true)
         return signInWithPopup(auth, provider)
     }
 
     // Logout user
     const logout = () => {
+        setLoader(true)
         return signOut(auth)
     }
        // Manage User

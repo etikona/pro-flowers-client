@@ -13,7 +13,7 @@ const Signin = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const photoUrl = form.photoUrl.value;
+        const photoURL = form.photoURL.value;
         // Error displaying
         if (password.length < 6) {
             setError("please give at least 6 characters")
@@ -21,7 +21,7 @@ const Signin = () => {
         }
 
         // Creating user
-        createUser(email, password)
+        createUser(email, password, photoURL)
             .then(res => {
                 const user = res.user;
                 form.reset()
@@ -49,7 +49,7 @@ const Signin = () => {
                 </div>
                 <div className="form-control">
                     <label htmlFor="password">Photo url</label>
-                    <input type="text" name="photoUrl" required id="" />
+                    <input type="text" name="photoURL" required id="" />
                 </div>
                 <input className='btn-submit' type="submit" value="Sign in" />
             </form>

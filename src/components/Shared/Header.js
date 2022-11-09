@@ -21,7 +21,7 @@ const navbar = <>
 {
   user?.email?
   <> 
-<li className='font-semibold'><Link to="/myReview">My Reviews</Link></li>
+<li className='font-semibold'><Link to="/myReviews">My Reviews</Link></li>
 <li className='font-semibold'><Link to="/addService">AddService</Link></li>
 <li onClick={handleLogout} className='font-semibold'><button to="/addService">Logout</button></li>
   </>

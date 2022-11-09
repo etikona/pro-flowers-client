@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
 
 const ServiceData = ({data}) => {
+    
     const {_id,name, img, price, description} = data;
     useTitle('Services')
     return (
