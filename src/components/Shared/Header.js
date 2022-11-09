@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
 
 
-// Dynamic Routes
+
+const Header = () => {
+  const {user, logout} = useContext(AuthContext);
+  // Handle Logout
+  const handleLogout = () => {
+    logout()
+    .then( () => {})
+    .error(() => {})
+  }
+
+  // Dynamic Routes
 const navbar = <>
-  <li className='font-semibold'><Link to="/home">Home</Link></li>
-  <li className='font-semibold'><Link to="/signin">Sign in</Link></li>
-  <li className='font-semibold'><Link to="/login">Login</Link></li>
-  <li className='font-semibold'><Link to="/serviceDetails">ServiceDetails</Link></li>
+<li className='font-semibold'><Link to="/home">Home</Link></li>
+<li className='font-semibold'><Link to="/signin">Sign in</Link></li>
+
+{
+  user?.email?
+  <> 
+<li className='font-semibold'><Link to="/myReview">My Reviews</Link></li>
+<li className='font-semibold'><Link to="/addService">AddService</Link></li>
+<li onClick={handleLogout} className='font-semibold'><button to="/addService">Logout</button></li>
+  </>
+  :
+<li className='font-semibold'><Link to="/login">Login</Link></li>
+}
+<li className='font-semibold'><Link to="/serviceDetails">ServiceDetails</Link></li>
 
 </>
-const Header = () => {
   return (
     <div>
       <div className="navbar "><font></font>
