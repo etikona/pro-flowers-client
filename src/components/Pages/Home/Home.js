@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhotoProvider } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import About from './About';
 import Banner from './Banner';
 import HomeData from './HomeData';
@@ -9,7 +10,7 @@ import Subscription from './Subscription';
 const Home = () => {
   const data = useLoaderData();
   const homeData = data.slice(0, 3);
-  
+  useTitle('Home')
   return (
     <PhotoProvider maskOpacity={0.5}>
       <div>

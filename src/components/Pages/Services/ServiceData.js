@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const ServiceData = ({data}) => {
-    const {name, img, price, description} = data
+    const {name, img, price, description} = data;
+    useTitle('Services')
     return (
         <div>
     <div className="card card-compact w-96 bg-base-100 shadow-xl"><font></font>
