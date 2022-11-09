@@ -1,4 +1,5 @@
 import React from 'react';
+import { PhotoProvider } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
 import About from './About';
 import Banner from './Banner';
@@ -10,7 +11,8 @@ const Home = () => {
   const homeData = data.slice(0, 3);
   
   return (
-    <div>
+    <PhotoProvider maskOpacity={0.5}>
+      <div>
       {/* Banner */}
       <Banner />
       <h2 className='text-5xl font-light'> Services</h2>
@@ -29,6 +31,8 @@ const Home = () => {
       <Subscription />
       <About />
     </div>
+    </PhotoProvider>
+    
   );
 };
 

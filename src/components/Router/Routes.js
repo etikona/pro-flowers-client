@@ -38,7 +38,8 @@ const router = createBrowserRouter([
             {
                 path: '/serviceDetails',
                 element: <ServiceDetails />,
-                // loader: ({params}) => fetch(`https://pro-flowers-server.vercel.app/services/${params._id}`)
+                loader: ({params}) => fetch(`https://pro-flowers-server-kgrcwyvbl-etikona.vercel.app/services/${params.id}`)
+               
             }
         ]
     }
