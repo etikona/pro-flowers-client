@@ -32,7 +32,8 @@ const Login = () => {
         })
         .catch(err =>{
             const msg = err.message;
-        } )
+        } );
+        navigate(from, {replace: true})
     }
 
     const googleLogin = () => {
