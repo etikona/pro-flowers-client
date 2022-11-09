@@ -3,7 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const HomeData = ({ data }) => {
-  const { name, img, price, description } = data;
+  const {_id, name, img, price, description } = data;
   return (
     <div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl"><font></font>
@@ -25,7 +25,7 @@ const HomeData = ({ data }) => {
 
           <div className="card-actions justify-end"><font></font>
             <Link to='/services' className="btn bg-blue-900">See all</Link><font></font>
-            <Link to='/details' className="btn bg-blue-900">Details</Link><font></font>
+            <Link to={`/serviceDetails/${_id}`} className="btn bg-blue-900">Details</Link><font></font>
           </div><font></font>
         </div><font></font>
       </div>
