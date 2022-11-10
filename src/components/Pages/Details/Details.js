@@ -38,8 +38,9 @@ const Details = () => {
     }
 
     return (
-        <div className='grid grid-cols-2'>
-            <div>
+        <div >
+          <div className='grid grid-cols-2'>
+          <div>
                 <div className="card card-side bg-sky-200 m-4 shadow-xl">
                     <figure><img src={img} alt="Movie" /></figure>
                     <div className="card-body">
@@ -60,11 +61,13 @@ const Details = () => {
                 </div>
                 <input type="submit" className='btn bg-blue-900 px-20 my-3' value="Review" />
                 </form>
-                <div>
-                    <Review></Review>
-                </div>
                 </div>
             </div>
+          </div>
+            <div className='justify-center items-center my-10 mx-4'> 
+            <h2 className="text-5xl font-thin text-sky-900 font-sans mb-4 text-center"> REVIEWS</h2><font></font>
+                    <Review></Review>
+                </div>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const Subscription = () => {
   <div className="hero-content flex-col lg:flex-row-reverse"><font></font>
     <img src={banner} className="max-w-sm rounded-lg shadow-2xl" /><font></font>
     <div><font></font>
-      <h1 className="text-5xl font-thin text-sky-900 font-sans">SEND A <br /> SUBSCRIPTION</h1><font></font>
+      <h2 className="text-5xl font-thin text-sky-900 font-sans">SEND A <br /> SUBSCRIPTION</h2><font></font>
       <p className="py-6 text-xl font-thin">Enjoy free delivery on all your <br />
        flowers plus savings of up to 
         30% when you choose your <br />

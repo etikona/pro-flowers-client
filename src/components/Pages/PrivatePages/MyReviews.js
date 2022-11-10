@@ -7,7 +7,11 @@ const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
 
     useEffect( () => {
-        fetch(`https://pro-flowers-server.vercel.app/reviews?name=${user?.email}`)
+        fetch(`https://pro-flowers-server.vercel.app/reviews?name=${user?.email}`, {
+            headers: {
+                authorization : `Bearer ${localStorage.getItem('token')}`
+            }
+        })
         .then(res => res.json())
         .then(data => setMyReviews(data))
     }, [user?.email]);
