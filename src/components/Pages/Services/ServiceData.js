@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
 
-const ServiceData = ({data}) => {
-    
+const ServiceData = ({data, handleAddService}) => {
     const {_id,name, img, price, description} = data;
     useTitle('Services')
     return (
@@ -21,6 +20,7 @@ const ServiceData = ({data}) => {
 
           <div className="card-actions justify-end"><font></font>
             <Link to='/services' className="btn bg-blue-900">See all</Link><font></font>
+            <Link to='/addService' onClick={ () => handleAddService(data)} className="btn bg-blue-900">Add Service</Link><font></font>
             <Link to={`/details/${_id}`} className="btn bg-blue-900">Details</Link><font></font>
           </div><font></font>
         </div><font></font>
