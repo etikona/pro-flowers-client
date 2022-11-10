@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../Hooks/useTitle';
 import Services from '../Services/Services';
 
 const AddService = () => {
     const [services, setServices] = useState([]);
-
-    useEffect( () => {
+    useTitle('AddService ')
+    useEffect(() => {
         fetch('https://pro-flowers-server.vercel.app/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
+            .then(res => res.json())
+            .then(data => setServices(data))
     }, [])
-    
+
     // Add to service 
     const handleAddService = (selectedService) => {
-        
+
         let newService = [];
         const exists = services.find(service => service._id === selectedService._id);
-        if(!exists){
+        if (!exists) {
             newService = [...services, selectedService]
         }
-        else{
-          const  rest = services.filter(service => service._id !== selectedService._id);
-          newService = [...rest, exists]
+        else {
+            const rest = services.filter(service => service._id !== selectedService._id);
+            newService = [...rest, exists]
         }
         setServices(newService)
 
@@ -28,8 +29,8 @@ const AddService = () => {
 
     return (
         <div>
-           
- 
+
+
         </div>
     );
 };

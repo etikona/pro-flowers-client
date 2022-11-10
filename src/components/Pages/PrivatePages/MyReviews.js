@@ -3,37 +3,37 @@ import { AuthContext } from '../../context/AuthProvider';
 import MyReview from './MyReview';
 
 const MyReviews = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [myReviews, setMyReviews] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
         fetch(`https://pro-flowers-server.vercel.app/reviews?name=${user?.email}`, {
             headers: {
-                authorization : `Bearer ${localStorage.getItem('token')}`
+                authorization: `Bearer ${localStorage.getItem('token')}`
             }
         })
-        .then(res => res.json())
-        .then(data => setMyReviews(data))
+            .then(res => res.json())
+            .then(data => setMyReviews(data))
     }, [user?.email]);
 
     const handleDelate = id => {
         const proceed = window.confirm("Are you sure to delete?");
-        if(proceed){
+        if (proceed) {
             fetch(`https://pro-flowers-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
                 headers: {
-                    'content-type' : 'application/json'
+                    'content-type': 'application/json'
                 },
                 body: JSON.stringify()
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('deleted successfully');
-                    const remaining = myReviews.filter(review => review._id !== id);
-                    setMyReviews(remaining);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+                        const remaining = myReviews.filter(review => review._id !== id);
+                        setMyReviews(remaining);
+                    }
+                })
         }
     }
 
@@ -41,32 +41,32 @@ const MyReviews = () => {
         fetch(`https://pro-flowers-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify()
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => console.log(data))
     }
 
     return (
         <div>
             <div className="overflow-x-auto  w-full"><font></font>
-  <table className="table w-full"><font></font>
-   
-  <tbody>
-    {
-        myReviews.map(review => <MyReview 
-        key={review._id}
-        review = {review}
-        handleDelate={handleDelate}
-        handleUpdate={handleUpdate}
-        ></MyReview>)
-    }
-  </tbody>
-   
-  </table>
-</div>
+                <table className="table w-full"><font></font>
+
+                    <tbody>
+                        {
+                            myReviews.map(review => <MyReview
+                                key={review._id}
+                                review={review}
+                                handleDelate={handleDelate}
+                                handleUpdate={handleUpdate}
+                            ></MyReview>)
+                        }
+                    </tbody>
+
+                </table>
+            </div>
         </div>
     );
 };

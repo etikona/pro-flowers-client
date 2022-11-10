@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Services/>,
+                element: <Services />,
                 loader: () => fetch('https://pro-flowers-server.vercel.app/services')
             },
             {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <Details />,
-                loader: ({params}) => fetch(`https://pro-flowers-server-kgrcwyvbl-etikona.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://pro-flowers-server-kgrcwyvbl-etikona.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addService',
@@ -49,7 +49,6 @@ const router = createBrowserRouter([
             {
                 path: '/reviews',
                 element: <Review />,
-                // loader: () => fetch('http://localhost:5000/reviews')
             },
             {
                 path: '/myReviews',
@@ -62,13 +61,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blogs',
-                element: <Blogs/>
+                element: <Blogs />
             }
         ]
     },
     {
         path: '*',
-        element: <Error/>
+        element: <Error />
     }
 ])
 

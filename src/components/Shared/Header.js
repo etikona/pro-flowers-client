@@ -5,32 +5,32 @@ import { AuthContext } from '../context/AuthProvider';
 
 
 const Header = () => {
-  const {user, logout} = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   // Handle Logout
   const handleLogout = () => {
     logout()
-    .then( () => {})
-    .error(() => {})
+      .then(() => { })
+      .error(() => { })
   }
 
   // Dynamic Routes
-const navbar = <>
-<li className='font-semibold'><Link to="/home">Home</Link></li>
-<li className='font-semibold'><Link to="/blogs">Blog</Link></li>
+  const navbar = <>
+    <li className='font-semibold'><Link to="/home">Home</Link></li>
+    <li className='font-semibold'><Link to="/blogs">Blog</Link></li>
 
-{
-  user?.email?
-  <> 
-<li className='font-semibold'><Link to="/myReviews">My Reviews</Link></li>
-<li className='font-semibold'><Link to="/addService">AddService</Link></li>
-<li onClick={handleLogout} className='font-semibold'><button to="/addService">Logout</button></li>
+    {
+      user?.email ?
+        <>
+          <li className='font-semibold'><Link to="/myReviews">My Reviews</Link></li>
+          <li className='font-semibold'><Link to="/addService">AddService</Link></li>
+          <li onClick={handleLogout} className='font-semibold'><button to="/addService">Logout</button></li>
+        </>
+        :
+        <li className='font-semibold'><Link to="/login">Login</Link></li>
+    }
+
+
   </>
-  :
-<li className='font-semibold'><Link to="/login">Login</Link></li>
-}
-
-
-</>
   return (
     <div>
       <div className="navbar "><font></font>
