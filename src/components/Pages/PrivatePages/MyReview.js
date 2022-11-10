@@ -1,7 +1,7 @@
 import React, { } from 'react';
 
-const MyReview = ({review, handleDelate}) => {
-    const { _id,name, photoURL, comment} = review;
+const MyReview = ({review, handleDelate, handleUpdate}) => {
+    const { _id,name, photoURL, comment, status} = review;
 
   
     return (
@@ -27,6 +27,7 @@ const MyReview = ({review, handleDelate}) => {
         
         </td>
         <td>Text:  {comment}</td>
+        <td> <button onCanPlay={() => handleUpdate(_id)} className='btn bg-green-900'>{status? 'update': 'pending'}</button> </td>
       
       </tr>
        

@@ -20,7 +20,11 @@ const MyReviews = () => {
         const proceed = window.confirm("Are you sure to delete?");
         if(proceed){
             fetch(`https://pro-flowers-server.vercel.app/reviews/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify()
             })
             .then(res => res.json())
             .then(data => {
@@ -31,6 +35,18 @@ const MyReviews = () => {
                 }
             })
         }
+    }
+
+    const handleUpdate = (id) => {
+        fetch(`https://pro-flowers-server.vercel.app/reviews/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify()
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
     }
 
     return (
@@ -44,6 +60,7 @@ const MyReviews = () => {
         key={review._id}
         review = {review}
         handleDelate={handleDelate}
+        handleUpdate={handleUpdate}
         ></MyReview>)
     }
   </tbody>
