@@ -1,6 +1,6 @@
 # Pro-Flowers
 ## Website live site link: 
-[pro-Flowers](https://pro-flowers.web.apphttps://pro-flowers.web.app)
+[pro-Flowers:](https://pro-flowers.web.app)
 
 ### Technologies used in this project are:
 
