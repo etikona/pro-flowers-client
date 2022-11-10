@@ -16,7 +16,7 @@ const Header = () => {
   // Dynamic Routes
 const navbar = <>
 <li className='font-semibold'><Link to="/home">Home</Link></li>
-<li className='font-semibold'><Link to="/signin">Sign in</Link></li>
+<li className='font-semibold'><Link to="/blogs">Blog</Link></li>
 
 {
   user?.email?

@@ -1,3 +1,4 @@
+import Blogs from "../Pages/Blogs/Blogs";
 import Details from "../Pages/Details/Details";
 import Review from "../Pages/Details/Review";
 import ServiceDetails from "../Pages/Details/ServiceDetails";
@@ -55,8 +56,11 @@ const router = createBrowserRouter([
             {
                 path: '/serviceDetails/',
                 element: <ServiceDetails />,
-              
-               
+
+            },
+            {
+                path: '/blogs',
+                element: <Blogs/>
             }
         ]
     }
