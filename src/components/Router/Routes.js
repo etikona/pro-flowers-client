@@ -2,6 +2,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import Details from "../Pages/Details/Details";
 import Review from "../Pages/Details/Review";
 import ServiceDetails from "../Pages/Details/ServiceDetails";
+import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import AddService from "../Pages/PrivatePages/AddService";
 import MyReviews from "../Pages/PrivatePages/MyReviews";
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
                 element: <Blogs/>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <Error/>
     }
 ])
 

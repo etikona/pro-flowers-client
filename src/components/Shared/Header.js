@@ -28,7 +28,7 @@ const navbar = <>
   :
 <li className='font-semibold'><Link to="/login">Login</Link></li>
 }
-<li className='font-semibold'><Link to="/serviceDetails">ServiceDetails</Link></li>
+
 
 </>
   return (
