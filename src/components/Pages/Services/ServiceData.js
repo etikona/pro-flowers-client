@@ -1,4 +1,6 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
 
@@ -8,9 +10,13 @@ const ServiceData = ({data, handleAddService}) => {
     return (
         <div>
     <div className="card card-compact w-96 bg-base-100 shadow-xl"><font></font>
-        <figure>
+      <PhotoProvider>
+        <PhotoView src={img}>
             <img src={img} alt="Shoes" />
-        </figure><font></font>
+
+        </PhotoView>
+      </PhotoProvider>
+      
         <div className="card-body"><font></font>
           <h2 className="card-title text-center font-bold">{name}</h2><font></font>
           <p className='font-semibold text-lg text-orange-500'>Price: {price}

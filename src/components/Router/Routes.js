@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <Main />,
         children: [
             {
-                path: '/home',
+                path: '/',
                 element: <Home />,
                 loader: () => fetch('https://pro-flowers-server.vercel.app/services')
             },
